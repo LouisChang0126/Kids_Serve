@@ -33,11 +33,18 @@ document.addEventListener("DOMContentLoaded", function() {
                 const range = (data.範圍 === user) ? 'class="is-warning"' : '';
                 const welcomer = (data.招待.includes(user)) ? 'class="is-warning"' : '';
                 const saturday = (data.週六敬拜 === user) ? 'class="is-warning"' : '';
-
+                //複雜的兒童服事
+                const kids_serve = data.兒童服事.map(item => `<div>${item}</div>`).join('\n');
+                if(data.兒童服事.length === 0){
+                    kids_serve='';
+                }
+                if (data.兒童服事.length === 0) {
+                    console.log('陣列是空的');
+                  }
                 //內文
                 document.getElementById('chart').innerHTML += `
                 <tr>
-                    <th>${doc.id}</th>
+                    <th>${doc.id.substring(5,9).replace('.', '/')}</th>
                     <th ${preacher}>${data.信息}</th>
                     <th ${leader}>${data.主領}</th>
                     <th ${vice}>${data.副主領}</th>
@@ -47,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     <th ${prayer}>${data.守望}</th>
                     <th ${anchor}>${data.司會}</th>
                     <th ${range}>${data.範圍}</th>
-                    <th>${data.兒童服事}</th>
+                    <th>${kids_serve}</th>
                     <th ${welcomer}>${data.招待}</th>
                     <th ${saturday}>${data.週六敬拜}</th>
                 </tr>
