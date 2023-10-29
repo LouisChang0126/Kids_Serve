@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 //內文
                 document.getElementById('chart').innerHTML += `
                 <tr>
-                    <th>${doc.id.substring(5,9).replace('.', '/')}</th>
+                    <th>${doc.id.substring(5,10).replace('.', '/')}</th>
                     <th ${preacher}>${data.信息}</th>
                     <th ${leader}>${data.主領}</th>
                     <th ${vice}>${data.副主領}</th>
