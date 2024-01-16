@@ -32,10 +32,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 //const welcomer = (data.招待.includes(user)) ? 'class="is-warning"' : '';
                 const saturday = (data.週六敬拜 === user) ? 'class="is-warning"' : '';
                 //複雜的兒童服事
-                const kids_serve = data.兒童服事.map(item => `<div>${item}</div>`).join('\n');
+                var kids_serve;
                 if(data.兒童服事.length === 0){
                     kids_serve='';
                     console.log('陣列是空的');
+                }
+                else{
+                    kids_serve = data.兒童服事.map(item => `<div>${item}</div>`).join('\n');
                 }
                 //重要資訊 換行
                 var info;
