@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 var kids_serve;
                 if(data.兒童服事.length === 0){
                     kids_serve='';
-                    console.log('陣列是空的');
+                    //console.log('陣列是空的');
                 }
                 else{
                     kids_serve = data.兒童服事.map(item => `<div>${item}</div>`).join('\n');
@@ -46,7 +46,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     info = data.重要資訊.map(item => `<p>${item}</p>`).join("\n");
                 } else {
                     info = ''; // 或者设置一个默认值，具体取决于你的需求
-                    console.log('重要資訊不是一个数组');
+                    //console.log('重要資訊不是一个数组');
                 }
                 //vocal
                 var vocal;
