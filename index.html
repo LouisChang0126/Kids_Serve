@@ -7,20 +7,24 @@
     <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
 </head>
 <body>
+	<label class="checkbox"><input class="largeCheckbox" id="checkbox_info" type="checkbox"/>重要資訊</label>
+  <label class="checkbox"><input class="largeCheckbox" id="checkbox_serve" type="checkbox" checked/>服事</label>
+  <label class="checkbox"><input class="largeCheckbox" id="checkbox_kids_serve" type="checkbox" checked/>兒童服事</label>
+  <label class="checkbox"><input class="largeCheckbox" id="checkbox_range" type="checkbox" checked/>經文範圍</label>
 	<table class="table is-striped is-bordered">
         <thead>
           <tr>
-            <th>日期</th>
-            <th><button class="button is-small is-focused is-link is-light"  id="info">重要資訊</button></th>
-            <th>信息</th>
-            <th>主領/副主領</th>
-            <th>大寶/中寶/小寶</th>
-            <th>守望</th>
-            <th>司會</th>
-            <th>後台</th>
-            <th>範圍</th>
-            <th>兒童服事</th>
-            <th>週六敬拜</th>
+            <th class=" has-background-link-light">日期</th>
+            <th class="info_show is-hidden has-background-link-light">重要資訊</th>
+            <th class="serve_show has-background-success">信息</th>
+            <th class="serve_show has-background-success">主領/副主領</th>
+            <th class="serve_show has-background-success">大寶/中寶/小寶</th>
+            <th class="serve_show has-background-success">守望</th>
+            <th class="serve_show has-background-success">司會</th>
+            <th class="serve_show has-background-success">後台</th>
+            <th class="kids_serve_show has-background-success">兒童服事</th>
+            <th class="serve_show has-background-success">週六敬拜</th>
+            <th class="range_show has-background-danger-light">經文範圍</th>
           </tr>
         </thead>
         <tbody id="chart"></tbody>
@@ -30,5 +34,22 @@
 </body>
 
 <script src="firestore.js" > </script>
+<style>
+  .checkbox {
+    font-size: 2em;
+  }
+  input.largeCheckbox {
+    width: 25px;
+    height:25px;
+  }
 
+  /* 新增的樣式 */
+  thead {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+  }
+</style>
 </html>

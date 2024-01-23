@@ -22,15 +22,15 @@ document.addEventListener("DOMContentLoaded", function() {
                 // 获取文档数据
                 const data = doc.data();
                 //hightlight
-                const preacher = (data.信息 === user) ? 'class="is-warning"' : '';
-                const microphone = (data.主領 === user || data.副主領 === user) ? 'class="is-warning"' : '';
-                const lead_group = (data.小寶 === user || data.中寶 === user || data.大寶 === user) ? 'class="is-warning"' : '';
-                const prayer = (data.守望 === user) ? 'class="is-warning"' : '';
-                const anchor = (data.司會 === user) ? 'class="is-warning"' : '';
-                const backstage = (data.後台 === user) ? 'class="is-warning"' : '';
-                const range = (data.範圍 === user) ? 'class="is-warning"' : '';
-                //const welcomer = (data.招待.includes(user)) ? 'class="is-warning"' : '';
-                const saturday = (data.週六敬拜 === user) ? 'class="is-warning"' : '';
+                const preacher = (data.信息 === user) ? 'class="serve_show has-background-warning"' : 'class="serve_show"';
+                const microphone = (data.主領 === user || data.副主領 === user) ? 'class="serve_show has-background-warning"' : 'class="serve_show"';
+                const lead_group = (data.小寶 === user || data.中寶 === user || data.大寶 === user) ? 'class="serve_show has-background-warning"' : 'class="serve_show"';
+                const prayer = (data.守望 === user) ? 'class="serve_show has-background-warning"' : 'class="serve_show"';
+                const anchor = (data.司會 === user) ? 'class="serve_show has-background-warning"' : 'class="serve_show"';
+                const backstage = (data.後台 === user) ? 'class="serve_show has-background-warning"' : 'class="serve_show"';
+                //const welcomer = (data.招待.includes(user)) ? 'class="has-background-warning"' : '';
+                const saturday = (data.週六敬拜 === user) ? 'class="serve_show has-background-warning"' : 'class="serve_show"';
+                const range = (data.範圍 === user) ? 'class="range_show has-background-warning"' : 'class="range_show"';
                 //複雜的兒童服事
                 var kids_serve;
                 if(data.兒童服事.length === 0){
@@ -68,16 +68,16 @@ document.addEventListener("DOMContentLoaded", function() {
                 document.getElementById('chart').innerHTML += `
                 <tr>
                     <th>${doc.id.substring(5,10).replace('.', '/')}</th>
-                    <th>${info}</th>
+                    <th class="info_show is-hidden">${info}</th>
                     <th ${preacher}>${data.信息}</th>
                     <th ${microphone}>${vocal}</th>
                     <th ${lead_group}>${group}</th>
                     <th ${prayer}>${data.守望}</th>
                     <th ${anchor}>${data.司會}</th>
                     <th ${backstage}>${data.後台}</th>
-                    <th ${range}>${data.範圍}</th>
-                    <th>${kids_serve}</th>
+                    <th class="kids_serve_show">${kids_serve}</th>
                     <th ${saturday}>${data.週六敬拜}</th>
+                    <th ${range}>${data.範圍}</th>
                 </tr>
                 `;
             }
@@ -85,13 +85,30 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 
-document.getElementById('info').addEventListener('click', function(event) {
-    var paragraphs = document.querySelectorAll('#chart p');
+document.getElementById("checkbox_info").addEventListener('change', function() {
+    var paragraphs = document.querySelectorAll('.info_show');
     paragraphs.forEach(function(paragraph) {
         paragraph.classList.toggle('is-hidden');
     });
+});
 
-    // 在按鈕按下後修改按鈕文字
-    var buttonText = this.innerText;
-    this.innerText = (buttonText === '重要資訊') ? '資\n訊' : '重要資訊';
+document.getElementById("checkbox_serve").addEventListener('change', function() {
+    var paragraphs = document.querySelectorAll('.serve_show');
+    paragraphs.forEach(function(paragraph) {
+        paragraph.classList.toggle('is-hidden');
+    });
+});
+
+document.getElementById("checkbox_kids_serve").addEventListener('change', function() {
+    var paragraphs = document.querySelectorAll('.kids_serve_show');
+    paragraphs.forEach(function(paragraph) {
+        paragraph.classList.toggle('is-hidden');
+    });
+});
+
+document.getElementById("checkbox_range").addEventListener('change', function() {
+    var paragraphs = document.querySelectorAll('.range_show');
+    paragraphs.forEach(function(paragraph) {
+        paragraph.classList.toggle('is-hidden');
+    });
 });
