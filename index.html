@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>兒崇班表</title>
+  <title>兒崇班表</title>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.15.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.14.6/firebase-firestore.js"></script>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 </head>
 <body>
 	<label class="checkbox"><input class="largeCheckbox" id="checkbox_info" type="checkbox"/>重要資訊</label>
   <label class="checkbox"><input class="largeCheckbox" id="checkbox_serve" type="checkbox" checked/>服事</label>
   <label class="checkbox"><input class="largeCheckbox" id="checkbox_kids_serve" type="checkbox" checked/>兒童服事</label>
   <label class="checkbox"><input class="largeCheckbox" id="checkbox_range" type="checkbox" checked/>經文範圍</label>
-	<table class="table is-striped is-bordered">
+  <button class="button is-link is-outlined pl-4" id="dl_chart">下載班表</button>
+  <table class="table is-striped is-bordered">
         <thead>
           <tr>
             <th class=" has-background-link-light">日期</th>
