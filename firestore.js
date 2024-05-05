@@ -123,14 +123,3 @@ document.getElementById("dl_chart").addEventListener('click', function() {
         downloadLink.click();
     });
 });
-/*
-function downloadTableAsImage() {
-    const table = document.querySelector('.table');
-    html2canvas(table).then(canvas => {
-        const imageData = canvas.toDataURL('image/png');
-        const downloadLink = document.createElement('a');
-        downloadLink.href = imageData;
-        downloadLink.download = 'table_image.png';
-        downloadLink.click();
-    });
-}*/
