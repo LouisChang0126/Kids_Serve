@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 const preacher = (data.信息 === user) ? 'class="serve_show has-background-warning"' : 'class="serve_show"';
                 const microphone = (data.主領 === user || data.副主領 === user) ? 'class="serve_show has-background-warning"' : 'class="serve_show"';
                 const lead_group = (data.小寶 === user || data.中寶 === user || data.大寶 === user) ? 'class="serve_show has-background-warning"' : 'class="serve_show"';
-                const prayer = (data.守望 === user) ? 'class="serve_show has-background-warning"' : 'class="serve_show"';
+                // const prayer = (data.守望 === user) ? 'class="serve_show has-background-warning"' : 'class="serve_show"';
                 const anchor = (data.司會 === user) ? 'class="serve_show has-background-warning"' : 'class="serve_show"';
                 const backstage = (data.後台 === user) ? 'class="serve_show has-background-warning"' : 'class="serve_show"';
                 //const welcomer = (data.招待.includes(user)) ? 'class="has-background-warning"' : '';
@@ -72,7 +72,6 @@ document.addEventListener("DOMContentLoaded", function() {
                     <th ${preacher}>${data.信息}</th>
                     <th ${microphone}>${vocal}</th>
                     <th ${lead_group}>${group}</th>
-                    <th ${prayer}>${data.守望}</th>
                     <th ${anchor}>${data.司會}</th>
                     <th ${backstage}>${data.後台}</th>
                     <th class="kids_serve_show">${kids_serve}</th>
@@ -80,6 +79,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     <th ${range}>${data.範圍}</th>
                 </tr>
                 `;
+                // <th ${prayer}>${data.守望}</th>
             }
         });
     });
